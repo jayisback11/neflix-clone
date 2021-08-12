@@ -1,25 +1,41 @@
-import React from 'react'
+import React, {useState, useEffect} from 'react'
 import './banner.scss'
+import axios from '../axios/axios'
+import requests from '../axios/request'
 
 export default function Banner() {
+    const [movie, setMovie] = useState([])
+
+    useEffect(() => {
+        const fetchMovies = async () => {
+            const request = await axios.get(requests.fetchNetflixOriginals); 
+            setMovie(
+                request.data.results[
+                    Math.floor(Math.random() * request.data.results.length - 1)
+                ]
+            )
+            return request
+        }
+        fetchMovies()
+    }, [])
+
     const truncate = (string, n) =>{
         return string?.length > n ?  string.substring(0, n-1) + " ..." : string;
     }
     return (
         <header className="banner" style={{
             backgroundSize: "cover",
-            backgroundImage: `url(https://occ-0-2794-2219.1.nflxso.net/dnm/api/v6/E8vDc_W8CLv7-yMQu8KMEC7Rrr8/AAAABe8in7VbJ3banhIpwChLQfXefd3uwazbRLlUsZZFeghf39dtL-Io-Z3rmx-T2Q9UVECfKRygfVHsUpzHPQE1JO6ij5rz.jpg?r=792)`,
+            backgroundImage: `url(https://image.tmdb.org/t/p/original${movie?.backdrop_path})`,
             backgroundPosition: "center center",
         }}>
             <div className="banner__contents">
-                <h1 className="banner__title">Title</h1>
+                <h1 className="banner__title">{movie?.name || movie?.original_name}</h1>
                 <div className="banner__buttons">
                     <button className="banner__button">Play</button>
                     <button className="banner__button">My List</button>
                 </div>
                 <h1 className="banner__desc">
-                    {truncate(`Lorem ipsum dolor sit amet, consectetur adipisicing elit. Porro, cupiditate officiis harum et explicabo repellendus amet voluptatem, libero molestias odit tempore aspernatur natus error facilis rerum aut, voluptas eveniet voluptatibus.
-               `, 200)}    
+                    {truncate(movie?.overview, 300)}    
                 </h1>
             </div>
 
