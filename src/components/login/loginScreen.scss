@@ -1,0 +1,310 @@
+.loginscreen {
+    
+    .loginscreen_first_slide {
+        width: 100%;
+        height: 100%;
+        background: url('https://assets.nflxext.com/ffe/siteui/vlv3/9c5457b8-9ab0-4a04-9fc1-e608d5670f1a/aad8cd4d-f4ac-49af-8539-25a81bf459d0/US-en-20210719-popsignuptwoweeks-perspective_alpha_website_large.jpg') center no-repeat;
+        position: relative;
+        overflow-x: hidden;
+        background-size: cover;
+        border-bottom: 8px solid #222;
+
+        .loginscreen_top {
+            position: absolute;
+            z-index: 1;
+
+            .loginscreen_netflix_logo {
+                cursor: pointer;
+                position: fixed;
+                top: 0;
+                left: 20px;
+                width: 150px;
+            }
+
+            .loginscreen_signInButton {
+                cursor: pointer;
+                position: fixed;
+                top: 20px;
+                right: 20px;
+                padding: 10px 20px;
+                background: #e50914;
+                color: white;
+                font-weight: 600;
+                border: none;
+                border-radius: 5px;
+            }   
+
+            
+        }
+        
+        .hide_logo_and_signin{
+            display: none;
+        }
+
+        .loginscreen_welcome {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            color: white;
+            
+            h1, h2 , h3 {
+                margin-bottom: 20px;
+                text-align: center;
+            }
+
+            h1 {
+                font-size: 3rem;
+                text-align: center;
+            }
+
+            h2, h3 {
+                font-weight: normal;
+            }
+
+            form {
+                display: flex;
+                align-items: center;
+
+                input {
+                    padding: 10px 10px;
+                    width: 30vw;
+                    height: 6.1vh;
+                    font-size: 20px;
+                    border: none;
+                    outline: none;
+                }
+
+                button {
+                    font-size: 20px;
+                    height: 9vh;
+                    color: white;
+                    background-color: #e50914;
+                    border: none;
+                    display: flex;
+                    cursor: pointer;
+                    align-items: center;
+                    position: relative;
+                    padding: 0 15px;
+                    padding-right: 30px;
+
+                    .right_arrow_icon {
+                        font-size: 2rem;
+                        position: absolute;
+                        right: 0;
+                        font-weight: 100;
+                    }
+                }
+            }
+        }
+
+        .loginscreen_body {
+            height: 100vh;
+            width: 100%;
+            background: rgba(0,0,0,.4);
+            background-image: linear-gradient(to top,rgba(0,0,0,.8) 0,rgba(0,0,0,0) 40%,rgba(0,0,0,0) 75%,rgba(0,0,0,.8) 100%);
+        }
+
+        .signin_container {
+            width: 100%;
+            height: 100%;
+            position: absolute;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            .signIn{
+                background: rgba(0,0,0,.6);
+                color: white;
+                padding: 2vw;
+                display: flex;
+                justify-content: space-between;
+                flex-direction: column;
+                align-items: center;
+                width: 20vw;
+                height: 30vw;
+                
+               input {
+                   border-radius: 5px;
+                   padding: 1vw;
+                   width: 15vw;
+                   border: none;
+                   outline: none;
+               }
+
+               button {
+                    padding: 1vw;
+                    width: 17vw;
+                    border-radius: 5px;
+                    color: white;
+                    background: #e50914;
+                    border: none;
+                    outline: none;
+                    font-weight: 700;
+               }
+
+               .signIn_remember_help {
+                display: flex;
+                justify-content: space-between;
+
+               
+               }
+                
+                
+            }
+            
+        }
+    }
+    .loginscreen_enjoy{
+        background-color: black;
+        color: white;
+        height: 60vh;
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        border-bottom: 8px solid #222;
+
+        .enjoy_text {
+            display: flex;
+            justify-content: center;
+            align-items: flex-start;
+            flex-direction: column;
+            margin-left: 10vw;
+        }
+
+        h1{
+            margin-bottom: 10px;
+            font-size: 4vw;
+            font-weight: 700;
+        }
+
+        p {
+            font-weight: normal;
+            font-size: 2vw;
+        }
+
+        img {
+            width: 35vw;
+            object-fit: cover;
+            padding-right: 13vw;
+        }
+    }
+
+    .loginscreen_download {
+        background-color: black;
+        color: white;
+        height: 60vh;
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        border-bottom: 8px solid #222;
+
+        .enjoy_text{
+            margin-right: 10vw;
+            display: flex;
+            justify-content: center;
+            align-items: flex-start;
+            flex-direction: column;
+            margin-left: 3vw;
+        }
+
+        h1{
+            margin-bottom: 10px;
+            font-size: 3vw;
+            font-weight: 700;
+        }
+
+        p {
+            font-weight: normal;
+            font-size: 2vw;
+        }
+
+        img{
+            width: 35vw;
+            object-fit: cover;
+            padding-left: 13vw;
+        }
+    }
+
+    .loginscreen_watch_everywhere {
+        background-color: black;
+        color: white;
+        height: 60vh;
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        border-bottom: 8px solid #222;
+
+        .enjoy_text {
+            display: flex;
+            justify-content: center;
+            align-items: flex-start;
+            flex-direction: column;
+            margin-left: 10vw;
+        }
+
+        h1{
+            margin-bottom: 10px;
+            font-size: 4vw;
+            font-weight: 700;
+        }
+
+        p {
+            font-weight: normal;
+            font-size: 2vw;
+        }
+
+        img {
+            width: 35vw;
+            object-fit: cover;
+            padding-right: 13vw;
+        }
+    }
+
+    .loginscreen_profile_for_kids {
+        background-color: black;
+        color: white;
+        height: 60vh;
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        border-bottom: 8px solid #222;
+
+        .enjoy_text{
+            margin-right: 10vw;
+            display: flex;
+            justify-content: center;
+            align-items: flex-start;
+            flex-direction: column;
+            margin-left: 3vw;
+        }
+
+        h1{
+            margin-bottom: 10px;
+            font-size: 3vw;
+            font-weight: 700;
+        }
+
+        p {
+            font-weight: normal;
+            font-size: 2vw;
+        }
+
+        img{
+            width: 35vw;
+            object-fit: cover;
+            padding-left: 13vw;
+        }          
+    }
+
+    .loginscreen_questions {
+        width: 100%;
+    }
+}
