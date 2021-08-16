@@ -1,11 +1,26 @@
-import React, { useState, useEffect} from 'react'
+import React, { useState, useEffect, useRef} from 'react'
 import './loginScreen.scss'
 import ChevronRightIcon from '@material-ui/icons/ChevronRight';
-
+import {db, auth} from '../../firebase'
 
 function LoginScreen() {
     const [signIn, setSignIn] = useState(false)
     const [showLogoAndSignIn, setShowLogoAndSignIn] = useState(true)
+
+    const emailRef = useRef(null)
+    const passwordRef = useRef(null)
+
+    const register = (e) => {
+        e.preventDefault()
+        auth.createUserWithEmailAndPassword(emailRef.current.value, passwordRef.current.value)
+        .catch(error => alert(error))
+    }
+
+    const signin = (e) => {
+        e.preventDefault()
+        auth.signInWithEmailAndPassword(emailRef.current.value, passwordRef.current.value)
+        .catch(error => alert(error))
+    }
 
     const showHandler = () => {
         if(window.scrollY > 100){
@@ -17,7 +32,7 @@ function LoginScreen() {
 
     useEffect(() => {
         window.addEventListener('scroll', showHandler)
-        return () => window.removeEventListener('scroll', showHandler)
+        return window.removeEventListener('scroll', showHandler)
     }, [])
 
     return (
@@ -32,9 +47,9 @@ function LoginScreen() {
                           <div className="signin_container">
                             <div className="signIn">
                                 <h1>Sign in</h1>
-                                <input type="email" placeholder="Email address"/>
-                                <input type="password" placeholder="Password"/>
-                                <button>Sign In</button>
+                                <input ref={emailRef} type="email" placeholder="Email address"/>
+                                <input ref={passwordRef} type="password" placeholder="Password"/>
+                                <button type="submit" onClick={signin}>Sign In</button>
                                 <div className="signIn_remember_help">
                                     <p>Remember Me</p>
                                     <a href="">Need help?</a>
@@ -43,8 +58,8 @@ function LoginScreen() {
                                     <div className="signIn_social">
                                         <p>Login with Facebook</p>
                                     </div>
-                                    <p>New to Netflix <span>Sign up now.</span></p>
-                                    <p>This page is protected by Google reCAPTCHA to ensure you're not a bot. <span><a href="">Learn more.</a></span></p>
+                                    <p className="loginscreen_newToNetflix">New to Netflix? <span onClick={register} className="loginscreen_signupnow">Sign up now.</span></p>
+                                    <p>This page is protected by Google reCAPTCHA to ensure you're not a bot. <span className="loginscreen_learnmore">Learn more.</span></p>
                                 </div>
                             </div>
                           </div>
@@ -62,7 +77,7 @@ function LoginScreen() {
                                 </h3>
                                 <form>
                                     <input type="email" placeholder="Email address"/>
-                                    <button onClick={() => setSignIn(true)}>
+                                    <button type="submit" onClick={() => setSignIn(true)}>
                                         GET STARTED
                                         <ChevronRightIcon className="right_arrow_icon"/>
                                     </button>

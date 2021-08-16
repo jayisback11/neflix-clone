@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useEffect} from 'react';
 import './App.css';
 import Homescreen from './components/homescreen/Homescreen'
 import {
@@ -6,11 +6,30 @@ import {
   Switch,
   Route,
 } from "react-router-dom";
-
+import { auth, db } from './firebase'
+import {useSelector, useDispatch} from 'react-redux'
 import Login from './components/login/LoginScreen'
+import {login, logout, selectUser} from './features/userSlice'
+import Profile from './components/profile/Profile'
 
 function App() {
-  const user = null
+  const dispatch = useDispatch()
+  const user = useSelector(selectUser)
+
+  useEffect(() => {
+    const unsubscribe = auth.onAuthStateChanged((authUser) => {
+      if(authUser){
+        dispatch(login({
+          uid: authUser.uid,
+          email: authUser.email
+        }))
+      } else {
+        dispatch(logout())
+      }
+    })
+
+    return unsubscribe
+  }, [dispatch])
 
   return (
     <div className="app">
@@ -19,7 +38,10 @@ function App() {
         <Login />
       ): (
         <Switch>
-          <Route>
+          <Route path="/profile">
+            <Profile/>
+          </Route>
+          <Route exact path="/">
             <Homescreen/>
           </Route>
       </Switch>

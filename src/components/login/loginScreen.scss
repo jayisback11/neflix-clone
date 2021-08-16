@@ -119,38 +119,71 @@
             .signIn{
                 background: rgba(0,0,0,.6);
                 color: white;
-                padding: 2vw;
-                display: flex;
-                justify-content: space-between;
-                flex-direction: column;
-                align-items: center;
-                width: 20vw;
-                height: 30vw;
+                padding: 30px;
+                display: grid;
+                width: 300px;
+                height: 400px;
+                border-radius: 5px;
                 
                input {
-                   border-radius: 5px;
-                   padding: 1vw;
-                   width: 15vw;
-                   border: none;
-                   outline: none;
+                    border-radius: 5px;
+                    margin-bottom: 10px;
+                    padding: 5px;
+                    border: none;
+                    outline: none;
                }
 
                button {
-                    padding: 1vw;
-                    width: 17vw;
                     border-radius: 5px;
+                    padding: 5px;
+                    margin-top: 5px;
+                    margin-bottom: 5px;
                     color: white;
                     background: #e50914;
                     border: none;
                     outline: none;
                     font-weight: 700;
+                    font-size: 16px;
+                    cursor: pointer;
                }
 
                .signIn_remember_help {
-                display: flex;
-                justify-content: space-between;
+                    color:#b3b3b3;
+                    display: flex;
+                    justify-content: space-between;
+                    
+                    a {
+                        color: #b3b3b3;
+                    }
+                   
 
                
+               }
+
+               .signin_footer {
+                   color: #737373;
+                    font-size: 13px;
+
+
+                    .loginscreen_newToNetflix {
+                        margin-top: 16px;
+                        font-size: 16px;
+                        margin-bottom: 11px;
+                    }
+                   .loginscreen_signupnow {
+                       color: white;
+                       cursor: pointer;
+                   }
+
+                   .loginscreen_learnmore {
+                        color: #0071eb;
+                        cursor: pointer;
+                    }
+
+                   .loginscreen_signupnow:hover {
+                       text-decoration: underline;
+                   }
+                   
                }
                 
                 
