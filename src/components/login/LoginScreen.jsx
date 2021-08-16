@@ -2,7 +2,7 @@ import React, { useState, useEffect, useRef} from 'react'
 import './loginScreen.scss'
 import ChevronRightIcon from '@material-ui/icons/ChevronRight';
 import {db, auth} from '../../firebase'
-
+//test
 function LoginScreen() {
     const [signIn, setSignIn] = useState(false)
     const [showLogoAndSignIn, setShowLogoAndSignIn] = useState(true)
