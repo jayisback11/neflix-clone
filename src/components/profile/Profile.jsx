@@ -4,6 +4,7 @@ import {selectUser, logout} from '../../features/userSlice'
 import {useSelector, useDispatch} from 'react-redux'
 import {auth} from '../../firebase'
 import './profile.scss'
+import PlanScreen from '../planScreen/PlanScreen'
 
 function Profile() {
     const user = useSelector(selectUser)
@@ -23,6 +24,7 @@ function Profile() {
                     <div className="profile_contents">
                         <p className="profile_email">{user.email}</p>
                         <p className="profile_plans">Plans</p>
+                        <PlanScreen />
                         <button className="profile_signout" onClick={signout}>Sign out</button>
                     </div>
                 </div>
