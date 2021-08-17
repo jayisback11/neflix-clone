@@ -1,3 +1,5 @@
+@import '../../global.scss';
+
 .loginscreen {
     
     .loginscreen_first_slide {
@@ -194,7 +196,7 @@
     .loginscreen_enjoy{
         background-color: black;
         color: white;
-        height: 60vh;
+        height: 700px;
         width: 100%;
         display: flex;
         align-items: center;
@@ -207,67 +209,114 @@
             align-items: flex-start;
             flex-direction: column;
             margin-left: 10vw;
+
+            @include mobile {
+                width: 500px;
+            }
         }
+
+        
 
         h1{
             margin-bottom: 10px;
-            font-size: 4vw;
+            font-size: 75px;
             font-weight: 700;
+            
+            @include mobile1280 {
+                font-size: 50px;
+            }
+
+            @include mobile {
+                font-size: 80px;
+            }
         }
 
         p {
             font-weight: normal;
-            font-size: 2vw;
+            font-size: 35px;
+
+            @include mobile {
+                font-size: 25px;
+            }
+            
         }
 
         img {
             width: 35vw;
             object-fit: cover;
             padding-right: 13vw;
+
+            @include mobile {
+                display: none;
+            }
         }
     }
+
+    
 
     .loginscreen_download {
         background-color: black;
         color: white;
-        height: 60vh;
+        height: 700px;
         width: 100%;
         display: flex;
         align-items: center;
         justify-content: space-between;
         border-bottom: 8px solid #222;
 
-        .enjoy_text{
-            margin-right: 10vw;
+
+        .enjoy_text {
             display: flex;
             justify-content: center;
             align-items: flex-start;
             flex-direction: column;
-            margin-left: 3vw;
+            margin-right: 50px;
+
+            @include mobile {
+                margin-left: 50px;
+                width: 500px;
+            }
         }
 
         h1{
             margin-bottom: 10px;
-            font-size: 3vw;
+            font-size: 75px;
             font-weight: 700;
+            
+            @include mobile1280 {
+                font-size: 50px;
+            }
+
+            @include mobile {
+                font-size: 60px;
+            }
         }
 
         p {
             font-weight: normal;
-            font-size: 2vw;
+            font-size: 35px;
+
+            @include mobile {
+                font-size: 25px;
+            }
+            
         }
 
-        img{
+        img {
             width: 35vw;
             object-fit: cover;
-            padding-left: 13vw;
+            padding-right: 13vw;
+
+            @include mobile {
+                display: none;
+            }
         }
     }
 
     .loginscreen_watch_everywhere {
         background-color: black;
         color: white;
-        height: 60vh;
+        height: 700px;
         width: 100%;
         display: flex;
         align-items: center;
@@ -284,26 +333,43 @@
 
         h1{
             margin-bottom: 10px;
-            font-size: 4vw;
+            font-size: 75px;
             font-weight: 700;
+            
+            @include mobile1280 {
+                font-size: 50px;
+            }
+
+            @include mobile {
+                font-size: 65px;
+            }
         }
 
         p {
             font-weight: normal;
-            font-size: 2vw;
+            font-size: 35px;
+
+            @include mobile {
+                font-size: 25px;
+            }
+            
         }
 
         img {
             width: 35vw;
             object-fit: cover;
             padding-right: 13vw;
+
+            @include mobile {
+                display: none;
+            }
         }
     }
 
     .loginscreen_profile_for_kids {
         background-color: black;
         color: white;
-        height: 60vh;
+        height: 700px;
         width: 100%;
         display: flex;
         align-items: center;
@@ -317,24 +383,49 @@
             align-items: flex-start;
             flex-direction: column;
             margin-left: 3vw;
+
+            @include mobile1280 {
+                margin-left: 40px;
+            }
         }
 
         h1{
             margin-bottom: 10px;
-            font-size: 3vw;
+            font-size: 75px;
             font-weight: 700;
+            
+            @include mobile1280 {
+                font-size: 50px;
+            }
+
+            @include mobile {
+                font-size: 60px;
+            }
         }
 
         p {
             font-weight: normal;
-            font-size: 2vw;
+            font-size: 35px;
+
+            @include mobile {
+                font-size: 25px;
+            }
+
+            @include mobile1280 {
+                font-size: 35px;
+            }
+            
         }
 
-        img{
+        img {
             width: 35vw;
             object-fit: cover;
-            padding-left: 13vw;
-        }          
+            padding-right: 13vw;
+
+            @include mobile {
+                display: none;
+            }
+        }        
     }
 
     .loginscreen_questions {

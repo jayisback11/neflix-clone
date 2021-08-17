@@ -2,17 +2,20 @@ import React, { useState, useEffect, useRef} from 'react'
 import './loginScreen.scss'
 import ChevronRightIcon from '@material-ui/icons/ChevronRight';
 import {db, auth} from '../../firebase'
+import {useHistory} from 'react-router-dom'
+
 //test
 function LoginScreen() {
     const [signIn, setSignIn] = useState(false)
     const [showLogoAndSignIn, setShowLogoAndSignIn] = useState(true)
-
+    const history = useHistory()
     const emailRef = useRef(null)
     const passwordRef = useRef(null)
 
     const register = (e) => {
         e.preventDefault()
         auth.createUserWithEmailAndPassword(emailRef.current.value, passwordRef.current.value)
+        .then(() => history.push('./profile'))
         .catch(error => alert(error))
     }
 
